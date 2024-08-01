@@ -13,10 +13,9 @@ const jung = new Person("yuno", 20)
 jung.info();
 
 
-class Student {
+class Student extends Person {
     constructor(name, age, study) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.study = study;
     }
 
@@ -29,9 +28,20 @@ const student1 = new Student("준현", 12000, "javascript");
 student1.info();
 
 
-class Tutee extends Person {
 
+class Tutee extends Person {
+    constructor(name, age, study) {
+        super(name, age);
+        this.study = study;
+    }
+
+    info() {
+        console.log(`저의 이름은 ${this.name} 나이는 ${this.age} 현재 ${this.study}를 학습하고 있습니다`)
+    }
 }
+
+const tutee = new Tutee("준열", 20, "javascript");
+tutee.info();
 
 
 
